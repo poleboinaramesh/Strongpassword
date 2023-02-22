@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<in>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  type="password" id="pass" oninput="password()">
+    <h1 id="result"></h1>
+    <input type="button" value="login" id="b">
+    <script>
+        function password() {
+            var pass=document.getElementById("pass").value;
+            var passlen=pass.length
+            if(passlen==0)
+            {
+                document.getElementById("result").innerHTML=""
+            }
+            else if(passlen>0&&passlen<=5)
+            {
+                document.getElementById("result").innerHTML="weakpassword"
+                document.getElementById("result").style.color="red"
+                document.getElementById("b").setAttribute("disabled","true")
+            
+            }
+            else if(passlen>5&&passlen<=10)
+            {
+                document.getElementById("result").innerHTML="good password"
+                document.getElementById("result").style.color="orange"
+                document.getElementById("b").removeAttribute("disabled")
+
+            }
+            else{
+                document.getElementById("result").innerHTML="strong password"
+                document.getElementById("result").style.color="green"
+            }
+
+
+            
+        }
+
+
+
+    </script>
+</body>
+</html>
